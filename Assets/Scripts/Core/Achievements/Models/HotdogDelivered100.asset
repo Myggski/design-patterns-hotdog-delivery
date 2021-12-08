@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6291a94b3b3a4410b744d986ac6ed6a2, type: 3}
+  m_Name: HotdogDelivered100
+  m_EditorClassIdentifier: 
+  id: 61994a63-12b5-4ed0-b556-41913132eeff
+  header: Hotdiggedydog!
+  description: 'Delivered 100 hotdogs in total. '
+  achievementGoalType: 2
+  goalValue: 50
+  achivementsToCompleteFirst:
+  - {fileID: 11400000, guid: 3daadaf9053ce7d4da5f4697736eaf92, type: 2}

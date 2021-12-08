@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60b5702da4c479586b7ac9d61b14a9e, type: 3}
+  m_Name: HotdogDelivered50
+  m_EditorClassIdentifier: 
+  id: 600ed0c9-7821-4862-8f59-67bb0c83cf5c
+  header: Get your hotdogs here!
+  description: Delivered your first 50 hotdogs!
+  achievementGoalType: 2
+  goalValue: 50
