@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="speedometerWrapper" style="height: 100%; width: auto; align-items: flex-end; justify-content: flex-end; bottom: auto; top: auto; flex-shrink: 0; flex-direction: column; flex-wrap: nowrap; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 24px; padding-right: 24px; padding-top: 24px; padding-bottom: 24px;">
+        <ui:Label text="0 KM/H" display-tooltip-when-elided="true" name="speedometerText" style="font-size: 96px; align-items: auto; justify-content: flex-start; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; color: rgb(255, 255, 255); -unity-text-outline-width: 0; text-shadow: 0 0 4px rgb(0, 0, 0); flex-direction: column; -unity-text-align: middle-center; transform-origin: center; white-space: nowrap; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/AchievementPopup.uss?fileID=7433441132597879392&amp;guid=026c541bf36aacd429920209ed56554e&amp;type=3#AchievementPopup" />
+    <ui:VisualElement name="AchievementWrapper" style="width: 25%; height: 100%; left: 75%; padding-left: 24px; padding-right: 24px; padding-top: 24px; padding-bottom: 24px; transition-duration: 1s;">
+        <ui:VisualElement name="HiddenExampleBadge" class="achievement-badge" style="display: none;">
+            <ui:Label text="Get your hotdogs here!" display-tooltip-when-elided="true" name="Label" class="achievement-header" />
+            <ui:Label text="You&apos;ve just collected your 50 first hotdogs, congratz man." display-tooltip-when-elided="true" class="achievement-description" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
