@@ -1,5 +1,7 @@
 # design-patterns-hotdog-delivery
-This is my gradable assignemnt called **Codename: Hotdog Delivery** for the design pattern course at FutureGames
+This is my gradable assignemnt called **Codename: Hotdog Delivery** for the design pattern course at FutureGames.
+
+You play as a Food delivery driver thar drives around a food truck that delivers hotdogs, and your only customers are dumpsters. This is just a ***very*** smal playground/demo. 
 
 ***Coded by Tomas Wallin***
 
