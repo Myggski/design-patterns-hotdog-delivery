@@ -11,15 +11,25 @@ public class MoveCommand : CommandBase {
     private IMoveInput _moveInput;
     private Coroutine _moveCoroutine;
 
+    /// <summary>
+    /// Setting up the wheels and the move input components
+    /// </summary>
     protected override void Setup() {
         _moveInput = GetComponent<IMoveInput>();
         _wheels = GetComponentsInChildren<Wheel>();
     }
 
+    /// <summary>
+    /// Starting to move if there's no move coroutine already that has been started
+    /// </summary>
     public override void Execute() {
         _moveCoroutine ??= StartCoroutine(Move());
     }
 
+    /// <summary>
+    /// Adding torque to the wheels so they'll rotate and move the car
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Move() {
         while (_moveInput.MoveDirection != Vector3.zero) {
             foreach (Wheel wheel in _wheels) {
@@ -39,7 +49,14 @@ public class MoveCommand : CommandBase {
         _moveCoroutine = null;
     }
 
-    private void Update() {
+    /// <summary>
+    /// Setting the mesh of the wheels correctly, syncs the mesh with the collider
+    /// </summary>
+    private void UpdateMeshTransformation() {
         Array.ForEach(_wheels, wheel => wheel.UpdateWheelTransform());
+    }
+
+    private void Update() {
+        UpdateMeshTransformation();
     }
 }

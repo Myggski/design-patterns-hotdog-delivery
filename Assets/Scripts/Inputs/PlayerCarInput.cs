@@ -22,14 +22,23 @@ public class PlayerCarInput : MonoBehaviour, IMoveInput, IBreakInput, IFoodDeliv
     public Vector3 MoveDirection => _moveDirection;
     public bool IsPressingBreak => _isPressingBreak;
 
+    /// <summary>
+    /// Getting the CarInputAction to listen to different key action events
+    /// </summary>
     private void Setup() {
         _carInputAction = new CarInputAction();
     }
 
+    /// <summary>
+    /// Enables the CarInputAction instance
+    /// </summary>
     private void EnableInputAction() {
         _carInputAction.Enable();
     }
     
+    /// <summary>
+    /// Subscribes to the events that's included in the game object
+    /// </summary>
     private void RegisterCallbacks() {
         if (HasMoveCommand) {
             _carInputAction.Car.Movement.performed += OnMove;    
@@ -44,6 +53,9 @@ public class PlayerCarInput : MonoBehaviour, IMoveInput, IBreakInput, IFoodDeliv
         }
     }
 
+    /// <summary>
+    /// Unsubscribes to the events that's included in the game object
+    /// </summary>
     private void UnregisterCallbacks() {
         if (HasMoveCommand) {
             _carInputAction.Car.Movement.performed -= OnMove;
@@ -58,12 +70,20 @@ public class PlayerCarInput : MonoBehaviour, IMoveInput, IBreakInput, IFoodDeliv
         }
     }
 
+    /// <summary>
+    /// Executes the FoodDeliveryCommand
+    /// </summary>
+    /// <param name="context">Input Action from Unitys Input System</param>
     private void OnFoodDelivery(InputAction.CallbackContext context) {
         if (HasFoodDeliveryCommand) {
             foodDeliveryCommand.Execute();
         }
     }
 
+    /// <summary>
+    /// Executes the MoveCommand
+    /// </summary>
+    /// <param name="context">Input Action from Unitys Input System</param>
     private void OnMove(InputAction.CallbackContext context) {
         Vector2 inputDirectionValue = context.ReadValue<Vector2>();
         _moveDirection = new Vector3(inputDirectionValue.x, 0, inputDirectionValue.y);
@@ -73,6 +93,10 @@ public class PlayerCarInput : MonoBehaviour, IMoveInput, IBreakInput, IFoodDeliv
         }
     }
 
+    /// <summary>
+    /// Executes the BreakCommand
+    /// </summary>
+    /// <param name="context">Input Action from Unitys Input System</param>
     private void OnBreak(InputAction.CallbackContext context) {
         _isPressingBreak = !_isPressingBreak; ;
 

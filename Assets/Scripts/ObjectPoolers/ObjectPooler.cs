@@ -12,7 +12,7 @@ public class ObjectPooler : MonoBehaviour {
     public static ObjectPooler Instance => _instance;
 
     /// <summary>
-    /// Setting up singleton pattern
+    /// Setting up singleton pattern and creates an instance of the poolDictionary
     /// </summary>
     private void Setup() {
         if (_instance != null && _instance != this)
@@ -24,6 +24,9 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Setting up the game objects inside the pool when the game starts
+    /// </summary>
     private void PreparePool() {
         foreach (PoolData pool in pools) {
             Queue<IPooledObject> objectPool = new Queue<IPooledObject>();
@@ -38,6 +41,13 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Takes an object from the pool and spawns it
+    /// </summary>
+    /// <param name="poolObjectTag">Tag of the game object that's being spawned</param>
+    /// <param name="position">Where the game object is being spawned world position</param>
+    /// <param name="rotation">The rotation of the game object</param>
+    /// <returns></returns>
     public IPooledObject SpawnFromPool(PoolObjectTag poolObjectTag, Vector3 position, Quaternion rotation) {
         if (!_poolDictionary.ContainsKey(poolObjectTag)) {
             Debug.LogWarning($"Pool with tag {poolObjectTag} doesn't exsist.");

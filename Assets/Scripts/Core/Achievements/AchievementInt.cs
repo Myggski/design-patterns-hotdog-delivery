@@ -17,6 +17,10 @@ public class AchievementInt : Achievement<int> {
         }
     }
 
+    /// <summary>
+    /// Adds value to the achievement, even if the achievement is already completed to keep track of the total value
+    /// </summary>
+    /// <param name="valueToAdd"></param>
     public override void AddValue(int valueToAdd) {
         CurrentValue += valueToAdd;
 
@@ -26,6 +30,10 @@ public class AchievementInt : Achievement<int> {
         }
     }
 
+    /// <summary>
+    /// This is future stuff. The achievements doesn't get saved in the PlayerPrefs right now. 
+    /// </summary>
+    /// <returns></returns>
     protected override int TryGetSavedValue() {
         return PlayerPrefs.GetInt(id, 0);
     }

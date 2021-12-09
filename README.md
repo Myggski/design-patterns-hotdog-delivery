@@ -11,7 +11,7 @@ I've also used Object pooling before, but not as commonly as I should.
 It was a really fun project for me, I wanted also to try out State Machine Pattern but never got the time in this course. I'll definitely check that out later. 
 
 ### Command pattern
-This can be found in `Assets/Scripts/Commands. 
+This can be found in `Assets/Scripts/Commands`. 
 I use it to control the car in the game *(see `PlayerCarInput.cs`)*. 
 Because I also had in mind that maybe an AI of some sort would also be able to control the car, but in its own way. 
 ### Singleton pattern

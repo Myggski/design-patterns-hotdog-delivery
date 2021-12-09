@@ -13,14 +13,23 @@ public class FoodDeliveryCommand : CommandBase {
         ? transform 
         : barrel;
 
+    /// <summary>
+    /// Setting up the rigidbody component. Setup is being called in CommandBase
+    /// </summary>
     protected override void Setup() {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Delivers food
+    /// </summary>
     public override void Execute() {
         DeliverFood();
     }
 
+    /// <summary>
+    /// Spawns food from the object pool and ejects it
+    /// </summary>
     private void DeliverFood() {
         IPooledObject food = ObjectPooler.Instance.SpawnFromPool(foodPoolObjectTag, SpawnPosition.position, SpawnPosition.rotation);
         (food as FoodBase)?.Eject(_rigidbody.velocity);

@@ -29,7 +29,6 @@ public class Wheel : MonoBehaviour {
             _turnAngle = Mathf.LerpAngle(_wheelCollider.steerAngle, maxAngle, _currentSteerTime / timeToReachMaxAngle);
             _wheelCollider.steerAngle = _turnAngle * steerInput;    
         }
-        
     }
 
     public void Accelerate(float powerInput) {

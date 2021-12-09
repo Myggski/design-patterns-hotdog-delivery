@@ -5,11 +5,17 @@ public class CarStabilizer : MonoBehaviour {
     private Rigidbody _rigidbody;
     private BoxCollider _boxCollider;
 
+    /// <summary>
+    /// Setting up the components
+    /// </summary>
     private void Setup() {
         _rigidbody = GetComponent<Rigidbody>();
         _boxCollider = GetComponent<BoxCollider>();
     }
 
+    /// <summary>
+    /// Sets the center mass of the rigidbody to make the car more stable while driving, else it will flip
+    /// </summary>
     private void SetCenterMass() {
         _rigidbody.centerOfMass = new Vector3(0, -transform.TransformPoint(_boxCollider.bounds.min).y / 2, 0);
     }

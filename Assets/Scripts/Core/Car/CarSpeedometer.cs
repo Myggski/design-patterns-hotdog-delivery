@@ -15,6 +15,9 @@ public class CarSpeedometer : MonoBehaviour {
         ? "MP/H" 
         : "KM/H";
 
+    /// <summary>
+    /// Setting up the rigidbody component to get the speed of the vehicle 
+    /// </summary>
     private void Setup() {
         _rigidbody = GetComponent<Rigidbody>();
     }
