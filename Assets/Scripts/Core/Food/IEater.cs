@@ -1,3 +1,3 @@
 public interface IEater {
-    public void Eat(FoodBase foodBase);
+    public void Eat(IPooledHotdog hotdog);
 }

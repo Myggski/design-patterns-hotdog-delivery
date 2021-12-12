@@ -1,7 +1,16 @@
-﻿using UnityEngine;
+﻿
+using System;
+using UnityEngine;
 
-public abstract class FoodBase : MonoBehaviour, IPooledObject {
+[RequireComponent(typeof(Rigidbody))]
+public abstract class FoodBase : MonoBehaviour, IPooledHotdog {
+    private protected Rigidbody _rigidbody;
+
     public abstract void Eject(Vector3 startVelocity);
+    
+    private void Setup() {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
 
     /// <summary>
     /// Checks if the food has collided with something that can eat the food
@@ -21,20 +30,25 @@ public abstract class FoodBase : MonoBehaviour, IPooledObject {
     /// </summary>
     /// <param name="position">The position that the food will be placed</param>
     /// <param name="rotation">The rotation that the food will have</param>
-    public virtual void Initialize(Vector3 position, Quaternion rotation) {
-        gameObject.SetActive(true);
+    public void Initialize(Vector3 position, Quaternion rotation) {
         transform.position = position;
         transform.rotation = rotation;
+        
+        gameObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Sets the food as active instead of destroying it, for the object pooling
-    /// </summary>
-    public virtual void SoftRemove() {
+    public void SoftDelete() {
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+
         gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision other) {
         CheckCollision(other);
+    }
+
+    private void Awake() {
+        Setup();
     }
 }

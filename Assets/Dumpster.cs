@@ -1,4 +1,5 @@
 using System;
+using ObjectPoolers;
 using UnityEngine;
 
 public class Dumpster : MonoBehaviour, IEater {
@@ -14,11 +15,11 @@ public class Dumpster : MonoBehaviour, IEater {
         _currentNumberOfFood = 0;
     }
     
-    public void Eat(FoodBase foodBase) {
+    public void Eat(IPooledHotdog hotdog) {
         if (_currentNumberOfFood < maxNumberOfFood) {
-            _currentNumberOfFood++;
-            foodBase.SoftRemove();
+            HotdogObjectPooler.Instance.Release(hotdog);
             foodDeliveredAchievement.AddValue(1);
+            _currentNumberOfFood++;
         }
     }
 

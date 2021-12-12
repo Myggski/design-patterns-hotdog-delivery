@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IPooledObject {
+public interface IPooledHotdog {
     public void Initialize(Vector3 position, Quaternion rotation);
-    public void SoftRemove();
+    public void SoftDelete();
 }

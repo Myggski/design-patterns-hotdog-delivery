@@ -1,3 +1,4 @@
+using ObjectPoolers;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -31,7 +32,8 @@ public class FoodDeliveryCommand : CommandBase {
     /// Spawns food from the object pool and ejects it
     /// </summary>
     private void DeliverFood() {
-        IPooledObject food = ObjectPooler.Instance.SpawnFromPool(foodPoolObjectTag, SpawnPosition.position, SpawnPosition.rotation);
+        IPooledHotdog food = HotdogObjectPooler.Instance.Get();
+        food.Initialize(SpawnPosition.position, SpawnPosition.rotation);
         (food as FoodBase)?.Eject(_rigidbody.velocity);
     }
 }

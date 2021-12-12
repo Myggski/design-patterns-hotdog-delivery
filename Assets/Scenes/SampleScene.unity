@@ -520,30 +520,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142918412}
-  - component: {fileID: 142918411}
+  - component: {fileID: 142918413}
   m_Layer: 0
-  m_Name: ObjectPooler
+  m_Name: HotdogObjectPooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &142918411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142918410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4a9fc9ce6292e4886ad11c4cd79453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: {fileID: 11400000, guid: 07ab6b7fb3b204f47a4dea36c0d160d7, type: 2}
-    prefab: {fileID: 2457321263152162202, guid: 324d7cf632b3fe54ab67f1cba7796ae1, type: 3}
-    size: 1000
 --- !u!4 &142918412
 Transform:
   m_ObjectHideFlags: 0
@@ -559,6 +543,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142918413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142918410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2315af6b684543a68a8f38233e1908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotdogPoolData:
+    prefab: {fileID: 2457321263152162202, guid: 324d7cf632b3fe54ab67f1cba7796ae1, type: 3}
+    size: 15
 --- !u!1 &149704704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9054c70a5c9ed454f8ef48a11963db28, type: 3}
@@ -1140,7 +1139,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0309893, y: 1}
+    m_SensorSize: {x: 2.0631704, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
